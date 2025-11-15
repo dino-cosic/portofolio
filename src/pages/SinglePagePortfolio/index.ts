@@ -1,0 +1,1 @@
+export { SinglePagePortfolio } from './SinglePagePortfolio';
