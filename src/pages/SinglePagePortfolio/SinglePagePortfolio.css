@@ -3,8 +3,7 @@
 /* A Journey Through Code */
 /* ==================== */
 
-/* Typography - Modern, unique font pairing */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap');
+/* Typography - Fonts are preloaded in index.html for better performance */
 
 :root {
     /* Modern Light Color Palette */
@@ -388,6 +387,8 @@ body {
     filter: blur(80px);
     opacity: 0.5;
     animation: floatOrb 20s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .glow-1 {
@@ -624,6 +625,8 @@ body {
     border: 1px solid;
     opacity: 0.3;
     animation: morphRing 8s ease-in-out infinite;
+    will-change: transform, border-radius;
+    transform: translateZ(0);
 }
 
 .ring-1 {
@@ -672,6 +675,8 @@ body {
     filter: blur(40px);
     opacity: 0.25;
     animation: glowPulse 4s ease-in-out infinite;
+    will-change: transform, opacity;
+    transform: translateZ(0);
 }
 
 @keyframes glowPulse {
@@ -736,6 +741,8 @@ body {
     position: absolute;
     font-size: 24px;
     animation: floatElement 6s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .float-1 {

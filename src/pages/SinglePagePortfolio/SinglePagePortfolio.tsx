@@ -141,7 +141,7 @@ export function SinglePagePortfolio() {
             >
                 <div className="nav-container">
                     <div className="nav-logo">
-                        <img src={logoImage} alt="Dino Cosic" className="nav-logo-img" />
+                        <img src={logoImage} alt="Dino Cosic" className="nav-logo-img" width="66" height="40" />
                     </div>
 
                     <div className="nav-links">
@@ -184,7 +184,7 @@ export function SinglePagePortfolio() {
                         transition={{ type: 'tween', duration: 0.3 }}
                     >
                         <div className="mobile-menu-header">
-                            <img src={logoImage} alt="Dino Cosic" className="mobile-menu-logo" />
+                            <img src={logoImage} alt="Dino Cosic" className="mobile-menu-logo" width="79" height="48" />
                         </div>
                         <div className="mobile-menu-content">
                             {navItems.map((item, index) => (
@@ -344,7 +344,10 @@ export function SinglePagePortfolio() {
                                     src={profileImage}
                                     alt="Dino Cosic - Senior Software Engineer"
                                     className="hero-image"
+                                    width="400"
+                                    height="400"
                                     loading="eager"
+                                    fetchPriority="high"
                                 />
                             </div>
 
@@ -908,7 +911,7 @@ export function SinglePagePortfolio() {
                             >
                                 {article.thumbnail && (
                                     <div className="article-thumbnail">
-                                        <img src={article.thumbnail} alt={article.title} />
+                                        <img src={article.thumbnail} alt={article.title} width="300" height="150" loading="lazy" />
                                     </div>
                                 )}
                                 <div className="article-content">
@@ -1057,7 +1060,7 @@ export function SinglePagePortfolio() {
 
             {/* Footer */}
             <footer className="footer">
-                <img src={logoImage} alt="Dino Cosic" className="footer-logo" />
+                <img src={logoImage} alt="Dino Cosic" className="footer-logo" width="59" height="36" loading="lazy" />
                 <p>© 2025 Dino Cosic</p>
             </footer>
         </div>
