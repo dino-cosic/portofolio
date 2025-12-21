@@ -5,3 +5,5 @@ export const cn = (
   return classes.filter(Boolean).join(' ');
 };
 
+export { calculateYearsOfExperience, getCurrentYear } from './dateUtils';
+

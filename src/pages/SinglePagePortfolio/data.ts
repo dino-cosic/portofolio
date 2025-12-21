@@ -1,6 +1,19 @@
 // Portfolio Data - Enriched for SEO & Marketing
 // Keywords: Senior Software Engineer, .NET Developer, Azure Cloud Architect, Technical Lead, Legacy Modernization
 
+import { calculateYearsOfExperience } from '@/utils';
+
+// Career start constants
+const CAREER_START_YEAR = 2018;
+const CAREER_START_MONTH = 1; // January
+
+/**
+ * Get years of experience (calculated dynamically)
+ * Returns fresh value on each call to ensure accuracy
+ */
+export const getYearsOfExperience = (): number => 
+  calculateYearsOfExperience(CAREER_START_YEAR, CAREER_START_MONTH);
+
 export const experiences = [
   {
     company: 'Symphony',
@@ -95,7 +108,7 @@ export const projects = [
 export const services = [
   {
     title: 'Legacy Modernization',
-    description: 'Transform aging monolithic systems into clean, modern, and maintainable architectures. I lead full modernization cycles — from deep-dive assessments to hands-on execution — backed by 6+ years of real-world enterprise experience.',
+    description: `Transform aging monolithic systems into clean, modern, and maintainable architectures. I lead full modernization cycles — from deep-dive assessments to hands-on execution — backed by ${getYearsOfExperience()}+ years of real-world enterprise experience.`,
     tooltip: {
       icon: '✨',
       title: 'AI-Powered Modernization',
@@ -136,35 +149,35 @@ export const skills = {
     {
       name: 'Backend',
       height: 100, // Tallest peak
-      years: 6,
+      years: calculateYearsOfExperience(2018, 1), // Started backend development in 2018
       items: ['C#', '.NET', 'ASP.NET Core', '.NET Framework', 'Entity Framework', 'REST APIs', 'Microservices', 'Unit Testing', 'Integration Testing',],
       color: 'accent', // Orange
     },
     {
       name: 'Azure Cloud',
       height: 92,
-      years: 5,
+      years: calculateYearsOfExperience(2018, 10), // Started Azure in October 2018
       items: ['Azure Functions', 'Service Bus', 'App Insights', 'Blob Storage', 'App Services', 'Container Apps', 'Key Vault', 'Azure DevOps'],
       color: 'accent',
     },
     {
       name: 'Databases',
       height: 75,
-      years: 6,
+      years: calculateYearsOfExperience(2018, 6), // Started databases in 2018
       items: ['SQL Server', 'PostgreSQL', 'MongoDB'],
       color: 'violet',
     },
     {
       name: 'DevOps',
       height: 70,
-      years: 5,
+      years: calculateYearsOfExperience(2020, 10), // Started DevOps in October 2019
       items: ['CI/CD', 'Git', 'Azure DevOps', 'Docker', 'GitHub Actions'],
       color: 'violet',
     },
     {
       name: 'Architecture',
       height: 65,
-      years: 4,
+      years: calculateYearsOfExperience(2020, 1), // Started architecture focus in 2020
       items: ['System Design', 'Clean Architecture', 'DDD', 'Event-Driven'],
       color: 'violet',
     },
@@ -181,6 +194,6 @@ export const skills = {
 // SEO-optimized meta content
 export const seoMeta = {
   title: 'Dino Cosic | Senior Software Engineer & .NET Specialist',
-  description: 'Senior Software Engineer specializing in .NET, Azure, and legacy modernization. 6+ years helping enterprises transform monoliths into modern cloud-native architectures.',
+  description: `Senior Software Engineer specializing in .NET, Azure, and legacy modernization. ${getYearsOfExperience()}+ years helping enterprises transform monoliths into modern cloud-native architectures.`,
   keywords: 'Senior Software Engineer, .NET Developer, Azure Cloud Architect, Legacy Modernization, Microservices, Technical Lead, Bosnia, Remote Developer',
 };

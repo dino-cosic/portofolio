@@ -3,8 +3,9 @@ import logoImage from '@/assets/logo.png';
 // Icons are now inline SVGs with gradients for consistent styling
 import { motion, useScroll } from 'framer-motion';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { certifications, education, experiences, projects, skills } from './data';
+import { certifications, education, experiences, getYearsOfExperience, projects, skills } from './data';
 import './SinglePagePortfolio.css';
+import { getCurrentYear } from '@/utils';
 
 // Article type for Medium posts
 interface Article {
@@ -279,7 +280,7 @@ export function SinglePagePortfolio() {
                             transition={{ duration: 0.8, delay: 0.9 }}
                         >
                             <div className="stat">
-                                <span className="stat-value">6+</span>
+                                <span className="stat-value">{getYearsOfExperience()}+</span>
                                 <span className="stat-label">Years Experience</span>
                             </div>
                             <div className="stat">
@@ -430,9 +431,7 @@ export function SinglePagePortfolio() {
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
                         >
-                            Six years ago, I wrote my first line of production code. What began as curiosity
-                            quickly became a calling — to architect systems that scale, to lead teams that deliver,
-                            and to mentor the next generation of engineers.
+                            What started as curiosity quickly became a passion — writing code, solving complex problems, and building systems that scale. Along the way, I discovered a love for leading teams, mentoring engineers, and shaping the architecture of mission-critical platforms.
                         </motion.p>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -440,11 +439,7 @@ export function SinglePagePortfolio() {
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
                         >
-                            Today, I specialize in enterprise modernization — transforming legacy .NET monoliths into
-                            cloud-native microservices on Azure. I've architected mission-critical backends for
-                            financial platforms, led teams at Fortune 500 companies, and shipped products handling
-                            20,000+ concurrent users. At the University of Sarajevo, I mentor 100+ students annually,
-                            achieving 95% course satisfaction.
+                            Today, I focus on enterprise modernization, SaaS, and startup products, transforming legacy .NET monoliths into cloud-native microservices on Azure. I’ve architected backends for financial platforms, built scalable systems for high-growth startups, and delivered products supporting tens of thousands of concurrent users. I also share my knowledge at the University of Sarajevo, mentoring the next generation of software engineers in practical, real-world development practices.
                         </motion.p>
 
                         <motion.div
@@ -455,7 +450,9 @@ export function SinglePagePortfolio() {
                             transition={{ delay: 0.4 }}
                         >
                             <p className="philosophy-quote">
-                                "Great software isn't just about code — it's about understanding
+                                "Great software isn't just about code. 
+                                <br/>
+                                It's about understanding
                                 the problem deeply enough to create elegant, maintainable solutions."
                             </p>
                         </motion.div>
@@ -1060,7 +1057,7 @@ export function SinglePagePortfolio() {
             {/* Footer */}
             <footer className="footer">
                 <img src={logoImage} alt="Dino Cosic" className="footer-logo" width="59" height="36" loading="lazy" />
-                <p>© 2025 Dino Cosic</p>
+                <p>© {getCurrentYear()} Dino Cosic</p>
             </footer>
         </div>
     );
